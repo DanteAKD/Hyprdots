@@ -48,16 +48,16 @@ case $1 in
     up)
 	# Set the volume on (if it was muted)
 	amixer -D pulse set Master on > /dev/null
-	# Up the volume (+ 5%)
-	amixer -D pulse sset Master 5%+ > /dev/null
+	# Up the volume (+ 2%)
+	wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%+ > /dev/null
 	send_notification
 	;;
     down)
 	amixer -D pulse set Master on > /dev/null
-	amixer -D pulse sset Master 5%- > /dev/null
+	wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%- > /dev/null
 	send_notification
 	;;
-    mute)
+    mute)i
     	# Toggle mute
 	amixer -D pulse set Master 1+ toggle > /dev/null
 	if is_mute ; then
