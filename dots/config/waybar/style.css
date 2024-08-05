@@ -35,7 +35,7 @@
 
 #workspaces button.active {
   color: black;
-  background: #f7f488;
+  background: #86afef;
   border-radius: 6px;
   min-width: 40px;
   transition: all 0.3s ease-in-out;
@@ -66,7 +66,7 @@
   padding: 0 4px;
   background: #030406;
   margin: 0px 4px;
-  padding: 2px 8px;
+  padding: 0px 8px;
   border-radius: 6px;
   border: 0px;
   opacity: 1;
@@ -79,12 +79,12 @@
 
 
 #clock {
-  color: #abf9c2;
+  color: #86afef;
 
 }
 
 #battery {
-  background: lightcoral;
+  background: #86afef;
   color: #030406;
 
 }
@@ -152,7 +152,7 @@
 }
 
 #memory {
-  color: pink;
+  color: #86afef;
 
 }
 

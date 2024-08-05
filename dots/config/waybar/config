@@ -7,9 +7,9 @@
     "margin": "5 0 0 0",
     "spacing":0,
 
-    "modules-left": ["custom/launcher","hyprland/window","memory","custom/updates"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/swww-grey","custom/swww","network","battery","clock","tray","custom/power"],
+    "modules-left": ["custom/launcher","hyprland/workspaces","custom/updates"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/swww-grey","custom/swww","memory","network","tray","battery","custom/power"],
 
 
 
@@ -53,13 +53,14 @@
   
     "clock": {
     	"interval": 1,
-      "format": "<span foreground='#abf9c2'>  </span>{:%a %d   %H:%M:%S}",
+      "format": "<span foreground='#86afef'> </span>{:%a %d   %H:%M:%S}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "on-click":"foot -e tty-clock -c -C 2 -B"
    },
 
 
     "memory": {
+    	"interval": 1,
         "format": "🖴 {used:0.1f}GB",
         "on-click": "kitty -e btop --utf-force"
     },
@@ -80,8 +81,8 @@
             "warning": 20,
             "critical": 5
         },
-        "format": "{icon} {capacity: >3}%",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon}   {capacity: >3}%",
+        "format-icons": ["", "", "", "", "" ]
     },
 
 
@@ -95,12 +96,12 @@
        },
        "exec-if": "which waybar-module-pacman-updates",
        "exec": "waybar-module-pacman-updates",
-       "on-click": "alacritty -e update"
+       "on-click": "kitty -e update"
    },
 
 
    "custom/power": {
-	"format": "⏻ ",
+	"format": "⏻",
 	"on-click": "exec wlogout",
 	"tooltip": false
 },
@@ -108,7 +109,7 @@
 
     "custom/launcher": {
       "format":"⩓",
-    	"on-click": "eww open launch",
+    	"on-click": "kitty -e ranger",
     	"tooltip": false,
      },
 
@@ -127,7 +128,7 @@
 
     "network": {
     	"interval": 1,
-        "format-wifi": "{essid}: {bandwidthDownBytes}    ",
+        "format-wifi": "{essid}: {bandwidthDownBytes}  " ,
         "format-ethernet": "{bandwidthDownBytes}    ",
         "tooltip-format": "{ifname} via {gwaddr}    ",
         "format-linked": "{ifname} (No IP)    ",
