@@ -1,8 +1,8 @@
 Needed dependencies:
-  -Dunst
-  -Alacritty
-  -swaylock
-  -waybar
-  -fastfetch
-  -ranger
-  -swww
+  - Dunst
+  - Alacritty
+  - swaylock
+  - waybar
+  - fastfetch
+  - ranger
+  - swww
