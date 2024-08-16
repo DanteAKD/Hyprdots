@@ -1,24 +1,4 @@
 #!/usr/bin/env bash
-
-# notify-send.sh - drop-in replacement for notify-send with more features
-# Copyright (C) 2015-2021 notify-send.sh authors (see AUTHORS file)
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-# Desktop Notifications Specification
-# https://developer.gnome.org/notification-spec/
-
 VERSION=1.2
 NOTIFY_ARGS=(--session
              --dest org.freedesktop.Notifications
@@ -29,34 +9,6 @@ REPLACE_ID=0
 URGENCY=1
 HINTS=()
 SUMMARY_SET=n
-
-help() {
-    cat <<EOF
-Usage:
-  notify-send.sh [OPTION...] <SUMMARY> [BODY] - create a notification
-
-Help Options:
-  -?|--help                         Show help options
-
-Application Options:
-  -u, --urgency=LEVEL               Specifies the urgency level (low, normal, critical).
-  -t, --expire-time=TIME            Specifies the timeout in milliseconds at which to expire the notification.
-  -f, --force-expire                Forcefully closes the notification when the notification has expired.
-  -a, --app-name=APP_NAME           Specifies the app name for the icon.
-  -i, --icon=ICON[,ICON...]         Specifies an icon filename or stock icon to display.
-  -c, --category=TYPE[,TYPE...]     Specifies the notification category.
-  -h, --hint=TYPE:NAME:VALUE        Specifies basic extra data to pass. Valid types are int, double, string and byte.
-  -o, --action=LABEL:COMMAND        Specifies an action. Can be passed multiple times. LABEL is usually a button's label. COMMAND is a shell command executed when action is invoked.
-  -d, --default-action=COMMAND      Specifies the default action which is usually invoked by clicking the notification.
-  -l, --close-action=COMMAND        Specifies the action invoked when notification is closed.
-  -p, --print-id                    Print the notification ID to the standard output.
-  -r, --replace=ID                  Replace existing notification.
-  -R, --replace-file=FILE           Store and load notification replace ID to/from this file.
-  -s, --close=ID                    Close notification.
-  -v, --version                     Version of the package.
-
-EOF
-}
 
 convert_type() {
     case "$1" in
