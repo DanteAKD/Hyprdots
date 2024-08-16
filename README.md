@@ -1,4 +1,4 @@
-Needed dependencies:
+    Needed dependencies:
     - Dunst
     - Rofi
     - Alacritty
