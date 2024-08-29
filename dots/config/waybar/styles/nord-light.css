@@ -8,16 +8,13 @@
 
 /* The whole bar */
 #waybar {
-  background: rgba(98, 118, 207, 255); /* Nord 0 (Polar Night) with transparency */
+  background: rgba(46, 52, 64, 0.8); /* Nord 0 (Polar Night) with transparency */
   color: #D8DEE9; /* Nord 1 (Snow Storm) */
   font-family: "JetBrainsMono Nerd Font";
   font-size: 15px;
 }
 
 /* Each module */
-#backlight,
-#custom-swww,
-#custom-name,
 #battery,
 #clock,
 #cpu,
@@ -32,24 +29,22 @@
 #bluetooth,
 #mic,
 #sound {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 0px;
-  margin-right: 0px;
-  border-radius: 0px; /* Less rounded corners */
-  background-color: rgba(1, 1, 1, 255); /* Lighter Nord 2 (Frost) with transparency */
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 3px; /* Less rounded corners */
+  background-color: rgba(68, 76, 88, 0.8); /* Lighter Nord 2 (Frost) with transparency */
 }
 
 /* Module-specific styles */
-
-
 #clock {
   font-size: 16px;
   font-weight: bold;
 }
 
 #network {
-  background-color: rgba(1, 1, 1, 255); /* Lighter Nord 4 (Blue) */
+  background-color: rgba(74, 95, 112, 0.8); /* Lighter Nord 4 (Blue) */
 }
 
 #network.disconnected {
@@ -65,13 +60,10 @@
 }
 
 #tray {
-  margin-right: 0px;
+  margin-right: 10px;
 }
 
 #window {
-  color: #000001;
-  border-color: #6176cf;
-  background-color: #6176cf;
   font-weight: bold;
 }
 
@@ -83,9 +75,6 @@ button:hover {
 
 #workspaces button {
   color: #D8DEE9; /* Nord 1 (Snow Storm) */
-  border-color: #000001;
-  background-color: #000001;
-
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -95,16 +84,8 @@ button:hover {
 }
 
 #workspaces button.active {
-  color: #000001;
-  border-color: #6176cf; /* Nord 6 (Frost - light green) */
-  background-color: #6176cf; /* Nord 2 (Frost) */
+  border-color: #A3BE8C; /* Nord 6 (Frost - light green) */
+  background-color: #4C566A; /* Nord 2 (Frost) */
 }
-#custom-padd {
-  border-radius: 21px 21px 21px 21px;
-    margin-left: 9px;
-    padding-left: 3px;
-  color: #6176cf;
-  border-color: #6176cf;
-  background-color: #6176cf;
-}
+
 

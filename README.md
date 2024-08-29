@@ -7,3 +7,4 @@
     - swww
     - Grim
     - wlogout
+    - imagemagick

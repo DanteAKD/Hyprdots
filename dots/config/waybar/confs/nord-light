@@ -1,0 +1,133 @@
+{
+  "width":1920,
+  "layer": "top",
+  "height": 30,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window",
+  ],
+  "modules-center": [
+    "clock"  // Add clock module to the center
+  ],
+"clock": {
+  "interval": 30,
+  "format": "{:%I:%M %p}",
+  "tooltip-format": "{:%a, %d %b %G}"
+},
+
+  "modules-right": [
+    "memory",
+    "network",
+    "tray",
+    "custom/power"
+  ],
+
+
+  "pulseaudio": {
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "format": "{format_source} 󰕾 {volume}%",
+    "format-bluetooth": "{format_source} 󰂰 {volume}%",
+    "format-muted": "{format_source} 󰸈",
+    "on-click": "foot-popup pulsemixer",
+    "max-volume": 150,
+    "scroll-step": 1
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-off": "",
+    "format-on": "󰂯",
+    "format-connected": "󰂱 {device_alias}",
+    "max-length": 16
+  },
+"network": {
+    	"interval": 1,
+        "format-wifi": "{essid}: {bandwidthDownBytes}  " ,
+        "format-ethernet": "{bandwidthDownBytes}    ",
+        "tooltip-format": "{ifname} via {gwaddr}    ",
+        "format-linked": "{ifname} (No IP)    ",
+        "format-disconnected": "Disconnected    ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+  "memory": {
+    	"interval": 1,
+        "format": "🖴 {percentage}%",
+        "on-click": "kitty -e btop --utf-force"
+    },
+  "battery": {
+    "interval": 60,
+    "format-time": "{H}:{m}",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "format-discharging": "{icon} {capacity}% ({time})",
+    "format-charging": "󰂄 {capacity}%",
+    "format": ""
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "⼀",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
+    "sort-by-number": true
+  }
+}
+"tray": {
+        "icon-size": 18,
+        "spacing": 4
+    },
+
+"hyprland/window": {
+        "format": "{}",
+      	"icon":true,
+	      "icon-size" : 18,  
+        "rewrite": {"": "Hyprland"},
+        "seperate-outputs":true,
+    },
+ 
+ "custom/power": {
+	"format": "⏻",
+	"on-click": "exec hyprctl dispatch exit",
+	"tooltip": true
+},
+"network#speed": {
+"interval": 1,
+"format": "{ifname}",
+"format-wifi": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+"format-ethernet": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+"format-disconnected": "󰌙",
+"tooltip-format": "{ipaddr}",
+"format-linked": "󰈁 {ifname} (No IP)",
+"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+"tooltip-format-ethernet": "{ifname} 󰌘",
+"tooltip-format-disconnected": "󰌙 Disconnected",
+"max-length": 30,
+"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+},

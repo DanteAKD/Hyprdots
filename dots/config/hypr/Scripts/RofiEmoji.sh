@@ -8,6 +8,7 @@ cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 
 exit
 # # DATA # #
+😭 loudly crying face face cry tears sad upset depressed
 🔥 fire hot cook flame
 🐧 penguin animal nature cut
 🗣️ speaking head user person human sing say talk
@@ -96,7 +97,6 @@ exit
 😰 anxious face with sweat face nervous sweat
 😥 sad but relieved face face phew sweat nervous
 😢 crying face face tears sad depressed upset :'(
-😭 loudly crying face face cry tears sad upset depressed
 😱 face screaming in fear face munch scared omg
 😖 confounded face face confused sick unwell oops :S
 😣 persevering face face sick no upset oops

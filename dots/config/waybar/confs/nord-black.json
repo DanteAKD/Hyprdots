@@ -2,14 +2,14 @@
 {
     "layer": "top", 
     "position": "top", 
-    "height": 34,
-    "width":1920,
-    "margin": "0 0 0 0",
+    "height": 30,
+    "width":1900,
+    "margin": "5 0 0 0",
     "spacing":0,
 
-    "modules-left": ["hyprland/workspaces","custom/name", "hyprland/window"],
-    "modules-center": [],
-    "modules-right": ["custom/swww","cpu","memory","backlight","network","tray","clock","battery"],
+    "modules-left": ["custom/launcher","hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/swww","memory","network","tray","battery"],
 
 
 
@@ -32,24 +32,16 @@
         "focused": "",
         "default": ""
     },
-    "persistent-workspaces": {
-	"1":[],
-	"2":[],
-	"3":[],
-	"4":[],
-	"5":[],
-},
     "on-scroll-up": "customctl dispatch workspace e+1",
     "on-scroll-down": "customctl dispatch workspace e-1"
 },
 
     "hyprland/window": {
-        "format": " {} ",
-      	"icon":false,
+        "format": "{}",
+      	"icon":true,
 	      "icon-size" : 18,  
         "rewrite": {"": "Hyprland"},
         "seperate-outputs":true,
-	"max-length": 10000,
     },
 
 
@@ -61,9 +53,9 @@
   
     "clock": {
     	"interval": 1,
-      "format": "<span foreground='#86afef'></span>{:%H:%M:%S}",
+      "format": "<span foreground='#86afef'> </span>{:%a %d   %H:%M:%S}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "on-click":"kitty -e tty-clock"
+      "on-click":"foot -e tty-clock -c -C 2 -B"
    },
 
 
@@ -72,12 +64,6 @@
         "format": "🖴 {used:0.1f}GB",
         "on-click": "kitty -e btop --utf-force"
     },
-
-"cpu": {
-	"interval": 1,
-	"format": " {usage}%",
-	"max-length": 10
-},
 
 
     "backlight": {
@@ -92,10 +78,10 @@
     "battery": {
         "states": {
             "good": 90,
-            "warning": 30,
+            "warning": 20,
             "critical": 5
         },
-        "format": "{icon} {capacity: >3}%",
+        "format": "{icon}   {capacity: >3}%",
         "format-icons": ["", "", "", "", "" ]
     },
 
@@ -129,16 +115,11 @@
 
 
      "custom/swww":{
-        "format":"🫐",
+        "format":"💠",
         "on-click":"exec ~/.config/hypr/Scripts/swww.sh",
         "tooltip":false,
       },
-   
-     "custom/name": {
-	"format":"IRIS",
-	"tooltip":false,
-},
- 
+    
     "custom/swww-grey":{
         "format":"🌓",
         "on-click":"exec ~/.config/hypr/Scripts/swww-grey.sh",
@@ -147,13 +128,12 @@
 
     "network": {
     	"interval": 1,
-        "format-wifi": "{essid}: {bandwidthDownBytes}  " ,
+        "format-wifi": "{essid}: {bandwidthDownBytes}  " ,
         "format-ethernet": "{bandwidthDownBytes}    ",
         "tooltip-format": "{ifname} via {gwaddr}    ",
         "format-linked": "{ifname} (No IP)    ",
         "format-disconnected": "Disconnected    ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-	"max-length": 12,
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
 
 
@@ -161,13 +141,7 @@
       "format":"menu",
       "on-click": "exec ~/.config/hypr/Scripts/menu.sh",
     	"tooltip": false,
-      },
-
-    "custom/padd": {
-        "format": "  ",
-        "interval" : "once",
-        "tooltip": false
-}
+      }
 
 
 }
