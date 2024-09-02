@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image13" width="24" height="24" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAQklEQVRIiWNgGAWjYBSMghEAGP9/1hBFEbl5+wOjyd/f1LPg575IFJFfWXsYeW+8ppYFTNQyaNSCUQtoB2ie0WgOAAtLFRLAnfxPAAAAAElFTkSuQmCC"/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image13"/>
+  </g>
+</mask>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="24" height="24"/>
+</clipPath>
+<g id="surface12" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(74.509804%,74.509804%,74.509804%);fill-opacity:1;" d="M 0 13.5 L 0 22.5 L 4.5 22.5 L 4.5 13.5 Z M 0 13.5 "/>
+</g>
+<image id="image22" width="24" height="24" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAR0lEQVRIiWNkoBL4/3NfJIrAr6w9jLw3XjNRywJcYNSCUQtGLRi1YNSCUQtGLRgcFjBSy6D/nzVEUQRu3v7AaPL3N7XMxwkAKYsOLbWDIfkAAAAASUVORK5CYII="/>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<use xlink:href="#image22"/>
+  </g>
+</mask>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="24" height="24"/>
+</clipPath>
+<g id="surface21" clip-path="url(#clip2)">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(74.509804%,74.509804%,74.509804%);fill-opacity:1;" d="M 18 0 L 18 22.5 L 22.5 22.5 L 22.5 0 Z M 18 0 "/>
+</g>
+<image id="image31" width="24" height="24" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAASUlEQVRIiWNgGAUDDRhxSfz/rCFKlAk3b39gNPn7m3QLfu6LJMqCX1l7GHlvvMYlzUSUIRSAUQtGLRi1YNSCUQuGhAU0r9FoDgD0ZRUkf2tamgAAAABJRU5ErkJggg=="/>
+<mask id="mask2">
+  <g filter="url(#alpha)">
+<use xlink:href="#image31"/>
+  </g>
+</mask>
+<clipPath id="clip3">
+  <rect x="0" y="0" width="24" height="24"/>
+</clipPath>
+<g id="surface30" clip-path="url(#clip3)">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(74.509804%,74.509804%,74.509804%);fill-opacity:1;" d="M 12 4.5 L 12 6.046875 C 13.769531 6.046875 15.390625 6.84375 16.5 8.109375 L 16.5 4.5 Z M 6 9 L 6 22.5 L 9.609375 22.5 C 9.328125 22.054688 9.140625 21.511719 9.140625 20.953125 C 9.140625 19.980469 9.703125 19.230469 10.453125 18.703125 C 9.703125 18.179688 9.128906 17.46875 9.140625 16.453125 C 9.140625 15.28125 9.65625 14.332031 10.171875 13.6875 C 10.289062 13.539062 10.382812 13.484375 10.5 13.359375 L 7.546875 13.359375 C 6.804688 13.359375 6.191406 12.785156 6.140625 12.046875 C 6.078125 10.933594 6.339844 9.890625 6.84375 9 Z M 16.5 15.75 C 16.070312 16.210938 15.578125 16.625 15 17.0625 C 14.863281 17.164062 14.746094 17.277344 14.671875 17.34375 C 14.671875 17.351562 14.628906 17.335938 14.625 17.34375 C 14.613281 17.359375 14.578125 17.386719 14.578125 17.390625 C 14.5625 17.40625 14.570312 17.445312 14.53125 17.484375 C 14.320312 17.996094 14.085938 18.394531 13.640625 18.703125 C 14.390625 19.230469 14.953125 19.980469 14.953125 20.953125 C 14.953125 21.511719 14.765625 22.054688 14.484375 22.5 L 16.5 22.5 Z M 16.5 15.75 "/>
+</g>
+</defs>
+<g id="surface4">
+<use xlink:href="#surface12" mask="url(#mask0)"/>
+<use xlink:href="#surface21" mask="url(#mask1)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 11.773438 7.457031 C 14.238281 7.316406 16.417969 9.210938 16.554688 11.675781 C 16.554688 13.777344 15.988281 14.554688 14.164062 15.941406 C 13.878906 16.15625 13.675781 16.316406 13.601562 16.410156 C 13.53125 16.5 13.554688 16.457031 13.554688 16.457031 C 13.566406 17.246094 12.847656 17.957031 12.054688 17.957031 C 11.265625 17.957031 10.546875 17.246094 10.554688 16.457031 C 10.554688 15.703125 10.890625 15.039062 11.257812 14.582031 C 11.625 14.121094 11.996094 13.804688 12.335938 13.550781 C 12.644531 13.308594 13.027344 12.972656 13.367188 12.566406 C 13.507812 12.394531 13.5625 12.101562 13.554688 11.910156 L 13.554688 11.863281 C 13.507812 11.015625 12.808594 10.40625 11.960938 10.457031 C 11.117188 10.503906 10.507812 11.109375 10.554688 11.957031 L 7.554688 11.957031 C 7.417969 9.492188 9.3125 7.59375 11.773438 7.457031 Z M 12.054688 19.457031 C 12.882812 19.457031 13.554688 20.125 13.554688 20.957031 C 13.554688 21.785156 12.882812 22.457031 12.054688 22.457031 C 11.226562 22.457031 10.554688 21.785156 10.554688 20.957031 C 10.554688 20.125 11.226562 19.457031 12.054688 19.457031 Z M 12.054688 19.457031 "/>
+<use xlink:href="#surface30" mask="url(#mask2)"/>
+</g>
+</svg>

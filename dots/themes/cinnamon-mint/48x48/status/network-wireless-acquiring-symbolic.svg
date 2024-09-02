@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image11" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAZElEQVRoge3VwQmAQAwEwCjXjo3Yj1XYj9iHD5s50BZOCR7CzHvJsq9EAAAAAAAA/MyQdeiqyxxxlLb0VIeybhm9jYUtjhJxJt5rM35dmM2A3gzozYDeDOgt8XNO9Vl2z6uG927bjgrY71DMPQAAAABJRU5ErkJggg=="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image11"/>
+  </g>
+</mask>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="48" height="48"/>
+</clipPath>
+<g id="surface10" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(74.509804%,74.509804%,74.509804%);fill-opacity:1;" d="M 30 39 C 30 42.3125 27.3125 45 24 45 C 20.6875 45 18 42.3125 18 39 C 18 35.6875 20.6875 33 24 33 C 27.3125 33 30 35.6875 30 39 Z M 30 39 "/>
+</g>
+</defs>
+<g id="surface2">
+<use xlink:href="#surface10" mask="url(#mask0)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 15 25.5 C 15 27.984375 12.984375 30 10.5 30 C 8.015625 30 6 27.984375 6 25.5 C 6 23.015625 8.015625 21 10.5 21 C 12.984375 21 15 23.015625 15 25.5 Z M 15 25.5 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 27 25.5 C 27 27.984375 24.984375 30 22.5 30 C 20.015625 30 18 27.984375 18 25.5 C 18 23.015625 20.015625 21 22.5 21 C 24.984375 21 27 23.015625 27 25.5 Z M 27 25.5 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 39 25.5 C 39 27.984375 36.984375 30 34.5 30 C 32.015625 30 30 27.984375 30 25.5 C 30 23.015625 32.015625 21 34.5 21 C 36.984375 21 39 23.015625 39 25.5 Z M 39 25.5 "/>
+</g>
+</svg>

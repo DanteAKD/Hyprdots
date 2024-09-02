@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image13" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAbUlEQVRoge3QwQ2CUAwA0P74j8xh4iAOwADswTjs4dEtmIARTMDgDW4Y7MnkvVubtmkbAQAAAABwWsk0r8utjRjrlngNz9J0U3qrE+r3kiNjjfdjn1H61EN+kTzgusTlvofzsEZ0uZEAAAD8iQ+bVQ5/hPsuQQAAAABJRU5ErkJggg=="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image13"/>
+  </g>
+</mask>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="48" height="48"/>
+</clipPath>
+<g id="surface12" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(74.509804%,74.509804%,74.509804%);fill-opacity:1;" d="M 15 30 L 18.046875 30 C 18.117188 28.96875 18.464844 27.84375 19.589844 27 L 15 27 Z M 15 30 "/>
+</g>
+<image id="image22" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAeElEQVRoge3Tqw2AQBCE4eHhCAKKQNIEwVAI/aGRhBLoAwzqeEjA3YVcCMn/ud2MmBUrAQAAAMBPBTahYynzx2If9yBLZy+NHMVWqWSqtPVXNmpWSZ2nTk7Crwu8xQFf+/0Bdk+swiiqb3NrpMFLIQAAAAAAAMDGCT+7DnSE7aIbAAAAAElFTkSuQmCC"/>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<use xlink:href="#image22"/>
+  </g>
+</mask>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="48" height="48"/>
+</clipPath>
+<g id="surface21" clip-path="url(#clip2)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(74.509804%,74.509804%,74.509804%);fill-opacity:1;" d="M 9 24 L 12.046875 24 C 12 21.960938 12.355469 19.042969 14.039062 17.460938 C 12.296875 18 10.289062 19.5 9 21 Z M 9 24 "/>
+</g>
+<image id="image31" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAeElEQVRoge3TMQ5AQBCF4WepJMIpVG6gUGmczj3cRuMWFNoVGkS3Uciu5P+6mcwkb4qRAAAAAOCnIt8BLvuyFjK1efaifJxde8l3kV7KukZbn9513FpJg2vNuAZCxwG+/f6AcJ5YlT0f91RaafIXBwAAAAAAAEE7AGvfDZNQ72TiAAAAAElFTkSuQmCC"/>
+<mask id="mask2">
+  <g filter="url(#alpha)">
+<use xlink:href="#image31"/>
+  </g>
+</mask>
+<clipPath id="clip3">
+  <rect x="0" y="0" width="48" height="48"/>
+</clipPath>
+<g id="surface30" clip-path="url(#clip3)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(74.509804%,74.509804%,74.509804%);fill-opacity:1;" d="M 39 24 L 35.953125 24 C 36 21.960938 35.644531 19.042969 33.960938 17.460938 C 35.710938 18 37.703125 19.511719 39 21 Z M 39 24 "/>
+</g>
+</defs>
+<g id="surface4">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 23.550781 14.910156 C 28.476562 14.632812 32.835938 18.421875 33.113281 23.347656 C 33.113281 27.550781 31.980469 29.113281 28.332031 31.878906 C 27.757812 32.308594 27.355469 32.632812 27.207031 32.816406 C 27.058594 33.003906 27.113281 32.917969 27.113281 32.910156 C 27.132812 34.496094 25.699219 35.910156 24.113281 35.910156 C 22.527344 35.910156 21.089844 34.496094 21.113281 32.910156 C 21.113281 31.402344 21.785156 30.078125 22.519531 29.160156 C 23.253906 28.242188 23.992188 27.609375 24.675781 27.097656 C 25.289062 26.617188 26.058594 25.945312 26.738281 25.128906 C 27.015625 24.792969 27.125 24.203125 27.113281 23.816406 L 27.113281 23.722656 C 27.015625 22.03125 25.613281 20.816406 23.925781 20.910156 C 22.234375 21.003906 21.015625 22.21875 21.113281 23.910156 L 15.113281 23.910156 C 14.835938 18.984375 18.621094 15.1875 23.550781 14.910156 Z M 24.113281 38.910156 C 25.769531 38.910156 27.113281 40.253906 27.113281 41.910156 C 27.113281 43.566406 25.769531 44.910156 24.113281 44.910156 C 22.457031 44.910156 21.113281 43.566406 21.113281 41.910156 C 21.113281 40.253906 22.457031 38.910156 24.113281 38.910156 Z M 24.113281 38.910156 "/>
+<use xlink:href="#surface12" mask="url(#mask0)"/>
+<use xlink:href="#surface21" mask="url(#mask1)"/>
+<use xlink:href="#surface30" mask="url(#mask2)"/>
+</g>
+</svg>
