@@ -1,10 +1,12 @@
     Needed dependencies:
     - Dunst
     - Rofi
-    - Alacritty
+    - ST (terminal)
     - Fish shell
     - Swaylock
     - swww
-    - Grim
+    - Grim, slurp
     - wlogout
     - imagemagick
+    - Clipman (AUR)
+       
