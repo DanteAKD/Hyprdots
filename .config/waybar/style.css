@@ -1,110 +1,172 @@
 * {
-  border: none;
+  border: 0;
   border-radius: 0;
-  min-height: 0;
-  margin: 0;
   padding: 0;
+  font-family: "Symbols Nerd Font Mono";
+  font-size: 14px;
+  margin-right: 4px;
+  margin-left: 4px;
+  padding-bottom: 0;
 }
 
-/* The whole bar */
 #waybar {
-  background: rgba(98, 118, 207, 255); /* Nord 0 (Polar Night) with transparency */
-  color: #D8DEE9; /* Nord 1 (Snow Storm) */
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 15px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
-/* Each module */
-#backlight,
-#custom-swww,
-#custom-name,
-#battery,
-#clock,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
-#tray,
-#language,
-#bluetooth,
-#mic,
-#sound {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 0px;
-  margin-right: 0px;
-  border-radius: 0px; /* Less rounded corners */
-  background-color: rgba(1, 1, 1, 255); /* Lighter Nord 2 (Frost) with transparency */
-}
-
-/* Module-specific styles */
-
-
-#clock {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-#network {
-  background-color: rgba(1, 1, 1, 255); /* Lighter Nord 4 (Blue) */
-}
-
-#network.disconnected {
-  color: #BF616A; /* Nord 11 (Red) */
-}
-
-#pulseaudio {
-  background-color: rgba(64, 74, 87, 0.8); /* Lighter Nord 3 (Snow Storm) */
-}
-
-#pulseaudio.muted {
-  /* No additional styles */
-}
-
-#tray {
-  margin-right: 0px;
-}
-
-#window {
-  color: #000001;
-  border-color: #6176cf;
-  background-color: #6176cf;
-  font-weight: bold;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-  background: inherit;
-  box-shadow: inherit;
+#workspaces {
+  background: #030406;
+  margin: 0;
+  padding: 0 2px;
+  border-radius: 6px;
 }
 
 #workspaces button {
-  color: #D8DEE9; /* Nord 1 (Snow Storm) */
-  border-color: #000001;
-  background-color: #000001;
-
-  padding-left: 10px;
-  padding-right: 10px;
+  color: white;
+  padding: 0px;
+  margin: 4px 3px;
+  border-radius: 6px;
+  background-color: transparent;
+  opacity: 1;
+}
+/*
+  transition: all 0.3s ease-in-out;*/
+#workspaces button.active {
+  color: black;
+  background: #86afef;
+  border-radius: 6px;
+  min-width: 40px;
+  
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: grey;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+}
+#pulseaudio,
+#custom-name,
+#cpu,
+#clock,
+#battery,
+#memory,
+#backlight,
+#tray,
+#window,
+#custom-launcher,
+#custom-power,
+#custom-updates,
+#custom-swww,
+#custom-swww-grey,
+#custom-rofi,
+#network {
+  padding: 0 4px;
+  background: #030406;
+  margin: 0px 4px;
+  padding: 0px 8px;
+  border-radius: 6px;
+  border: 0px;
+  opacity: 1;
 }
 
-#workspaces button.active {
-  color: #000001;
-  border-color: #6176cf; /* Nord 6 (Frost - light green) */
-  background-color: #6176cf; /* Nord 2 (Frost) */
-}
-#custom-padd {
-  border-radius: 21px 21px 21px 21px;
-    margin-left: 9px;
-    padding-left: 3px;
-  color: #6176cf;
-  border-color: #6176cf;
-  background-color: #6176cf;
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -----------------------------------------------------------------------------
+*/
+
+
+#clock {
+  color: #86afef;
+
 }
 
+#battery {
+  background: #86afef;
+  color: #030406;
+
+}
+
+#battery.charging {
+  background: #41ce6c;
+  color: #030406;
+}
+
+@keyframes blink {
+  to {
+    color: #4c566a;
+    background-color: #eceff4;
+  }
+}
+
+#battery.warning:not(.charging) {
+  background: lightcoral;
+  color: #f4ecf0;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+#battery.critical:not(.charging) {
+  background: #fd5959;
+  color: #f4ecf0;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+
+
+
+
+#custom-launcher {
+  border: hidden;
+  background-color: #030406;
+  background-image: url("/home/nyx/.config/waybar/ghost.png");
+  background-size: 16px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2px 10px;
+  font-size: 20px;
+}
+
+
+#custom-power {
+  border-style: hidden;
+  background-color: #030406;
+  padding: 2px 10px;
+  color: burlywood;
+}
+
+#window {
+  border-style: hidden;
+  margin-top: 1px;
+}
+
+#memory {
+  color: #86afef;
+
+}
+
+#backlight {
+  color: lightsalmon;
+
+}
+
+#network {}
+
+#custom-rofi {
+  background: #6ab2ff;
+  color: #03050F;
+  padding: 0px 10px;
+}

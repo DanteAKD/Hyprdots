@@ -7,9 +7,9 @@
     "margin": "5 0 0 0",
     "spacing":0,
 
-    "modules-left": ["custom/launcher","hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/swww","memory","network","tray","battery"],
+    "modules-left": ["custom/launcher","custom/name","hyprland/workspaces","cpu","memory"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["custom/swww","backlight","pulseaudio","network","tray","clock"],
 
 
 
@@ -36,6 +36,25 @@
     "on-scroll-down": "customctl dispatch workspace e-1"
 },
 
+"pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon} {volume}% 󰂯",
+        "format-bluetooth-muted": "󰖁 {icon} 󰂯",
+        "format-muted": "󰖁 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󱡒",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
     "hyprland/window": {
         "format": "{}",
       	"icon":true,
@@ -44,25 +63,47 @@
         "seperate-outputs":true,
     },
 
+    "cpu": {
+	"interval": 1,
+	"format": "  {usage}%",
+	"max-length": 10
+ 	},
 
     "tray": {
         "icon-size": 18,
         "spacing": 4
     }, 
+    
 
-  
+    "volume": {
+        "format": "{output}",
+        "exec": "~/.config/hypr/Scripts/pipewire-volume.sh",
+        "interval": 5,
+        "return-type": "json"
+    },
+
+    "custom/name": {
+	"format":"IRIS",
+	"tooltip":false,
+}, 
     "clock": {
     	"interval": 1,
       "format": "<span foreground='#86afef'> </span>{:%a %d   %H:%M:%S}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "on-click":"foot -e tty-clock -c -C 2 -B"
    },
-
+"backlight": {
+        "format": "{icon} {percent: >3}%",
+        "format-icons": ["", ""],
+        "on-scroll-down": "brightnessctl -c backlight set 1%-",
+        "on-scroll-up": "brightnessctl -c backlight set +1%",
+        "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
+    },
 
     "memory": {
     	"interval": 1,
         "format": "🖴 {used:0.1f}GB",
-        "on-click": "kitty -e btop --utf-force"
+        "on-click": "st -e btop --utf-force"
     },
 
 
@@ -96,7 +137,7 @@
        },
        "exec-if": "which waybar-module-pacman-updates",
        "exec": "waybar-module-pacman-updates",
-       "on-click": "kitty -e update"
+       "on-click": "st -e update"
    },
 
 
@@ -109,7 +150,7 @@
 
     "custom/launcher": {
       "format":"⩓",
-    	"on-click": "kitty -e ranger",
+    	"on-click": "st -e ranger",
     	"tooltip": false,
      },
 

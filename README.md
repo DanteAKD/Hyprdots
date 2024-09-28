@@ -8,5 +8,5 @@
     - Grim, slurp
     - wlogout
     - imagemagick
-    - Clipman (AUR)
+    - Cliphist
        

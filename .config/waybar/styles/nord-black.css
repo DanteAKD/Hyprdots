@@ -49,9 +49,9 @@
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
-
-
-
+#pulseaudio,
+#custom-name,
+#cpu,
 #clock,
 #battery,
 #memory,
