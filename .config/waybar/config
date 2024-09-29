@@ -7,7 +7,7 @@
     "margin": "5 0 0 0",
     "spacing":0,
 
-    "modules-left": ["custom/launcher","custom/name","hyprland/workspaces","cpu","memory"],
+    "modules-left": ["custom/launcher","hyprland/workspaces","cpu","memory"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["custom/swww","backlight","pulseaudio","network","tray","battery","clock"],
 
@@ -149,8 +149,8 @@
 
 
     "custom/launcher": {
-      "format":"⩓",
-    	"on-click": "st -e ranger",
+      "format":"⩓ ɪʀɪsᴜ",
+    	"on-click": "st -e ranger ~/.config/hypr",
     	"tooltip": false,
      },
 
