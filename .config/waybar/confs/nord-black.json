@@ -9,7 +9,7 @@
 
     "modules-left": ["custom/launcher","custom/name","hyprland/workspaces","cpu","memory"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/swww","backlight","pulseaudio","network","tray","clock"],
+    "modules-right": ["custom/swww","backlight","pulseaudio","network","tray","battery","clock"],
 
 
 
@@ -37,7 +37,7 @@
 },
 
 "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}% 󰂯",
         "format-bluetooth-muted": "󰖁 {icon} 󰂯",
         "format-muted": "󰖁 {format_source}",
@@ -50,7 +50,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", " ", "  "]
         },
         "on-click": "pavucontrol"
     },
