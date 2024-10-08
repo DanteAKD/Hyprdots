@@ -9,7 +9,7 @@
 
     "modules-left": ["custom/launcher","hyprland/workspaces","cpu","memory"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/swww","backlight","pulseaudio","network","tray","battery","clock"],
+    "modules-right": ["custom/swww","backlight","pulseaudio","network","tray","clock"],
 
 
 
@@ -103,7 +103,7 @@
     "memory": {
     	"interval": 1,
         "format": "🖴 {used:0.1f}GB",
-        "on-click": "st -e btop --utf-force"
+        "on-click": "kitty -e btop --utf-force"
     },
 
 
@@ -150,7 +150,7 @@
 
     "custom/launcher": {
       "format":"⩓ ɪʀɪsᴜ",
-    	"on-click": "st -e ranger ~/.config/hypr",
+    	"on-click": "kitty -e ranger ~/.config/hypr",
     	"tooltip": false,
      },
 

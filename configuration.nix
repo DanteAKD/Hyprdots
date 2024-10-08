@@ -36,6 +36,13 @@
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable; 
 };
+ #drivers.nvidia.enable = true;
+ #drivers.nvidia-prime = {
+    #enable = true;
+    #intelBusID = "00:02.0";
+   # nvidiaBusID = "01:00.0";
+  #};
+ #drivers.intel.enable = true;
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -44,7 +51,7 @@
 	unstable = import <unstable> {};
 };
 };
-
+  programs.vim.defaultEditor = true;
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -103,6 +110,7 @@ services.pipewire = {
 	fira-code
 	fira-code-symbols
 	font-awesome
+        jetbrains-mono
 ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -126,6 +134,14 @@ services.pipewire = {
     p7zip
     ueberzugpp
     gitui
+    zoom-us
+    obs-studio
+    microsoft-edge
+    obs-studio-plugins.wlrobs
+    cava
+    cbonsai 
+	nwg-look
+	lxappearance	
 	gtk2
 	gtk3
 	gtk4
@@ -146,6 +162,7 @@ services.pipewire = {
 	
 	
   ];
+services.xserver.excludePackages = with pkgs; [nano xterm];
 services.supergfxd.enable = true;
 systemd.services.supergfxd.path = [ pkgs.pciutils ];
 services.blueman.enable = true;
@@ -169,11 +186,10 @@ services.gvfs.enable = true; # Mount, trash, and other functionalities
 services.tumbler.enable = true; # Thumbnail support for images
 
 #enable Hyprland
-#xdg.portal.enable = true;
-#xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk];
+xdg.portal.enable = true;
+xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];
 programs.hyprland = {
 	enable = true;
-	#nvidiaPatches = true;
 	xwayland.enable = true;
 };
 environment.sessionVariables = {

@@ -7,9 +7,6 @@ if status is-interactive
     alias xr="sudo pacman -Rs"
     alias xu="sudo pacman -Suy"
 
-    alias ls="ptls"
-    alias pwd="ptpwd"
-    alias cp="ptcp"
 
     alias e="nvim"
     alias se="sudo -E -s nvim"

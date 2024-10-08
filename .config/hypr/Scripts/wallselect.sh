@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 for app in imagemagick; do
   if ! pacman -Q $app >/dev/null 2>&1; then
