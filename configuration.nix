@@ -18,6 +18,7 @@
   services.xserver.enable = true; 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  hardware.bluetooth.enable =true;
   # GPU
   hardware.opengl = {
     enable = true;
@@ -38,6 +39,11 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  nixpkgs.config = {
+	packageOverrides = pkgs: {
+	unstable = import <unstable> {};
+};
+};
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -47,7 +53,10 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ fcitx5-unikey ];
+  };
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "vi_VN";
     LC_IDENTIFICATION = "vi_VN";
@@ -104,12 +113,22 @@ services.pipewire = {
     ranger
     gdb
     gcc
-    fish
     fastfetch
     brightnessctl
     firefox 
     cmus
-    htop   
+    htop
+    networkmanagerapplet
+    unstable.zed-editor
+    obsidian
+    zip
+    unzip
+    p7zip
+    ueberzugpp
+    gitui
+	gtk2
+	gtk3
+	gtk4
 	waybar
 	dunst
 	libnotify
@@ -127,10 +146,31 @@ services.pipewire = {
 	
 	
   ];
+services.supergfxd.enable = true;
+systemd.services.supergfxd.path = [ pkgs.pciutils ];
+services.blueman.enable = true;
+services = {
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
+};
+
+
 programs.fish.enable = true;
+users.defaultUserShell = pkgs.fish;
+programs.thunar.enable = true;
+programs.xfconf.enable = true;
+programs.thunar.plugins = with pkgs.xfce; [
+  thunar-archive-plugin
+  thunar-volman
+];
+services.gvfs.enable = true; # Mount, trash, and other functionalities
+services.tumbler.enable = true; # Thumbnail support for images
+
 #enable Hyprland
-xdg.portal.enable = true;
-xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk];
+#xdg.portal.enable = true;
+#xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk];
 programs.hyprland = {
 	enable = true;
 	#nvidiaPatches = true;
@@ -140,8 +180,11 @@ environment.sessionVariables = {
 	WLR_NO_HARDWARE_CURSORS ="1";
 	NIXOS_OZONE_WL = "1";
 };
-
-
+#gtk = {
+#enable = true;
+#iconTheme.package =  pkgs.papirus-icon-theme;
+#iconTheme.name = "Papirus Dark";
+#};
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
