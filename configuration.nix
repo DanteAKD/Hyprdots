@@ -13,8 +13,9 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = ["acpi_backlight=native"];
   #Display Manager
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.enable = true; 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -26,7 +27,7 @@
     driSupport32Bit = true;
     extraPackages = with pkgs; [libglvnd];
 };
-  services.xserver.videoDrivers = ["intel" "nvidia"];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -115,7 +116,8 @@ services.pipewire = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    home-manager
+    vim
     wget
     git
     ranger
@@ -193,14 +195,9 @@ programs.hyprland = {
 	xwayland.enable = true;
 };
 environment.sessionVariables = {
-	WLR_NO_HARDWARE_CURSORS ="1";
+	#WLR_NO_HARDWARE_CURSORS ="1";
 	NIXOS_OZONE_WL = "1";
 };
-#gtk = {
-#enable = true;
-#iconTheme.package =  pkgs.papirus-icon-theme;
-#iconTheme.name = "Papirus Dark";
-#};
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
