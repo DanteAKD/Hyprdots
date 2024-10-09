@@ -13,7 +13,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = ["acpi_backlight=native"];
+  #boot.kernelParams = ["acpi_backlight=native"];
   #Display Manager
   services.displayManager.sddm.enable = true;
   services.xserver.enable = true; 
@@ -25,11 +25,13 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
-    extraPackages = with pkgs; [libglvnd];
+    extraPackages = with pkgs; [libglvnd libvdpau-va-gl];
 };
-  services.xserver.videoDrivers = ["nvidia"];
+environment.variables.VDPAU_DRIVER = "va_gl";
+environment.variables.LIBVA_DRIVER_NAME = "intel";
+  services.xserver.videoDrivers = ["intel"];
   hardware.nvidia = {
-    modesetting.enable = true;
+    modesetting.enable = false;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     
@@ -125,7 +127,9 @@ services.pipewire = {
     gcc
     fastfetch
     brightnessctl
-    firefox 
+    firefox
+    ani-cli
+    mpv 
     cmus
     htop
     networkmanagerapplet
