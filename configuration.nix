@@ -141,9 +141,9 @@ services.pipewire = {
     microsoft-edge
     obs-studio-plugins.wlrobs
     cava
-    cbonsai 
-	nwg-look
-	lxappearance	
+    cbonsai
+	libsForQt5.qtstyleplugin-kvantum
+	libsForQt5.qt5ct 
 	gtk2
 	gtk3
 	gtk4
@@ -164,6 +164,16 @@ services.pipewire = {
 	
 	
   ];
+nixpkgs.config.qt5 = {
+  enable = true;
+  platformTheme = "qt5ct"; 
+    style = {
+      package = pkgs.utterly-nord-plasma;
+      name = "Utterly Nord Plasma";
+    };
+};
+environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
+
 services.xserver.excludePackages = with pkgs; [nano xterm];
 services.supergfxd.enable = true;
 systemd.services.supergfxd.path = [ pkgs.pciutils ];

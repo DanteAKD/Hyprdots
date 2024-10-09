@@ -13,7 +13,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "23.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -76,8 +76,8 @@
 		name = "Bibata-Modern-Ice";
 };
 	theme = {
-		package = pkgs.adw-gtk3;
-		name = "adw-gtk3";
+		package = pkgs.gnome.gnome-themes-extra;
+		name = "Adwaita-dark";
 };
 	iconTheme = {
 		package = pkgs.papirus-icon-theme;
