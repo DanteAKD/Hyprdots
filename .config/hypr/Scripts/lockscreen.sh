@@ -1,4 +1,3 @@
-#!/bin/bash
 
 CONFIG="$HOME/.config/hypr/swaylock/config"
 
