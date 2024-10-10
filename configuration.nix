@@ -115,10 +115,27 @@ services.pipewire = {
 	font-awesome
         jetbrains-mono
 ];
+  programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+
+    # Add any missing dynamic libraries for unpackaged programs
+
+    # here, NOT in environment.systemPackages
+	glibc
+	cmake
+	gdb
+	libgcc
+	libclang
+	clang-tools
+	libstdcxx5
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     home-manager
+    vscode 
     vim
     wget
     git
@@ -133,7 +150,6 @@ services.pipewire = {
     cmus
     htop
     networkmanagerapplet
-    unstable.zed-editor
     obsidian
     zip
     unzip
@@ -148,6 +164,7 @@ services.pipewire = {
     cbonsai
 	libsForQt5.qtstyleplugin-kvantum
 	libsForQt5.qt5ct 
+	swappy
 	gtk2
 	gtk3
 	gtk4
@@ -189,7 +206,7 @@ services = {
     };
 };
 
-
+programs.file-roller.enable = true;
 programs.fish.enable = true;
 users.defaultUserShell = pkgs.fish;
 programs.thunar.enable = true;
