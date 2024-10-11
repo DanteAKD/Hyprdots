@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # Define the directories for colorful and black-and-white wallpapers
 COLOR_DIR="$HOME/Pictures/Colourful/"

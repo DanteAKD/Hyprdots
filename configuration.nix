@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -14,12 +14,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   #boot.kernelParams = ["acpi_backlight=native"];
+  
   #Display Manager
   services.displayManager.sddm.enable = true;
   services.xserver.enable = true; 
+  #Hostname
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   hardware.bluetooth.enable =true;
+  #Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
   # GPU
   hardware.opengl = {
     enable = true;
@@ -89,7 +96,7 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
   users.users.irisu = {
     isNormalUser = true;
     description = "irisu";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [];
   };
 
@@ -134,10 +141,12 @@ services.pipewire = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
     home-manager
     vscode 
     vim
     wget
+    nitch
     git
     ranger
     gdb
@@ -145,6 +154,7 @@ services.pipewire = {
     fastfetch
     brightnessctl
     firefox
+    vesktop
     ani-cli
     mpv 
     cmus
@@ -162,6 +172,9 @@ services.pipewire = {
     obs-studio-plugins.wlrobs
     cava
     cbonsai
+    usbutils
+    cmatrix
+	jq
 	libsForQt5.qtstyleplugin-kvantum
 	libsForQt5.qt5ct 
 	swappy
@@ -173,7 +186,6 @@ services.pipewire = {
 	libnotify
 	swww
 	kitty
-	alacritty
 	rofi-wayland
 	cliphist
 	swaylock
