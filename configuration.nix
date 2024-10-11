@@ -59,6 +59,9 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
   nixpkgs.config = {
 	packageOverrides = pkgs: {
 	unstable = import <unstable> {};
+	nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+};
 };
 };
   programs.vim.defaultEditor = true;
@@ -141,7 +144,8 @@ services.pipewire = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-
+	 nur.repos.nltch.spotify-adblock    #for installing spotify-adblock
+   nur.repos.nltch.ciscoPacketTracer8 #for installing packettracer8 
     home-manager
     vscode 
     vim
@@ -174,6 +178,7 @@ services.pipewire = {
     cbonsai
     usbutils
     cmatrix
+    spotify
 	jq
 	libsForQt5.qtstyleplugin-kvantum
 	libsForQt5.qt5ct 
