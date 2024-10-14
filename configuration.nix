@@ -16,7 +16,7 @@
   #boot.kernelParams = ["acpi_backlight=native"];
   
   #Display Manager
-  services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.enable = true;
   services.xserver.enable = true; 
   #Hostname
   networking.hostName = "nixos"; # Define your hostname.
@@ -27,6 +27,8 @@
   programs.virt-manager.enable = true;
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
+  #Tablet
+  hardware.opentabletdriver.enable = true;
   # GPU
   hardware.opengl = {
     enable = true;
@@ -105,6 +107,7 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnsupportedSystem = true;
 #enable sound with pipewire
 sound.enable = true;
 security.rtkit.enable = true;
@@ -145,7 +148,6 @@ services.pipewire = {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 	 nur.repos.nltch.spotify-adblock    #for installing spotify-adblock
-   nur.repos.nltch.ciscoPacketTracer8 #for installing packettracer8 
     home-manager
     vscode 
     vim
@@ -179,6 +181,9 @@ services.pipewire = {
     usbutils
     cmatrix
     spotify
+    gnome.eog
+    atool
+   # config.boot.kernelPackages.digimend
 	jq
 	libsForQt5.qtstyleplugin-kvantum
 	libsForQt5.qt5ct 
@@ -199,8 +204,7 @@ services.pipewire = {
 	slurp
 	wl-clipboard
 	wlroots
-	
-	
+krita	
   ];
 nixpkgs.config.qt5 = {
   enable = true;
@@ -211,7 +215,7 @@ nixpkgs.config.qt5 = {
     };
 };
 environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
-
+#services.xserver.digimend.enable = true;
 services.xserver.excludePackages = with pkgs; [nano xterm];
 services.supergfxd.enable = true;
 systemd.services.supergfxd.path = [ pkgs.pciutils ];
