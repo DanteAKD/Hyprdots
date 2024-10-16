@@ -16,7 +16,7 @@
   #boot.kernelParams = ["acpi_backlight=native"];
   
   #Display Manager
-  #services.displayManager.sddm.enable = true;
+ # services.displayManager.sddm.enable = true;
   services.xserver.enable = true; 
   #Hostname
   networking.hostName = "nixos"; # Define your hostname.
@@ -27,6 +27,7 @@
   programs.virt-manager.enable = true;
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
+  virtualisation.waydroid.enable = true;
   #Tablet
   hardware.opentabletdriver.enable = true;
   # GPU
@@ -147,7 +148,8 @@ services.pipewire = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	 nur.repos.nltch.spotify-adblock    #for installing spotify-adblock
+    nur.repos.ataraxiasjel.waydroid-script 
+    nur.repos.nltch.spotify-adblock    #for installing spotify-adblock
     home-manager
     vscode 
     vim
