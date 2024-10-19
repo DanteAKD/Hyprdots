@@ -27,6 +27,7 @@
   programs.virt-manager.enable = true;
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
+  virtualisation.spiceUSBRedirection.enable = true; 
   virtualisation.waydroid.enable = true;
   #Tablet
   hardware.opentabletdriver.enable = true;
@@ -149,7 +150,6 @@ services.pipewire = {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     nur.repos.ataraxiasjel.waydroid-script 
-    nur.repos.nltch.spotify-adblock    #for installing spotify-adblock
     home-manager
     vscode 
     vim
@@ -182,10 +182,10 @@ services.pipewire = {
     cbonsai
     usbutils
     cmatrix
-    spotify
     gnome.eog
     atool
-   # config.boot.kernelPackages.digimend
+    pavucontrol
+    spicetify-cli
 	jq
 	libsForQt5.qtstyleplugin-kvantum
 	libsForQt5.qt5ct 
@@ -207,7 +207,9 @@ services.pipewire = {
 	wl-clipboard
 	wlroots
 krita	
+gnome.gnome-software
   ];
+services.flatpak.enable = true;
 nixpkgs.config.qt5 = {
   enable = true;
   platformTheme = "qt5ct"; 
