@@ -78,6 +78,7 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.inputMethod = {
+    fcitx5.waylandFrontend = true;
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [ fcitx5-unikey ];
   };
