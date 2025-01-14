@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Rofi Emoticons. Not my own. Cant remember the source
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # .config/hypr/scripts/screenshot_window.sh
 # Screenshot a window Ctrl+Print
 

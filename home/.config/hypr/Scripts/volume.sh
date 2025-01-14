@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 # You can call this script like this:
 # $./volume.sh up
@@ -40,7 +40,7 @@ $DIR/notify-send.sh "$volume""     " -i "$icon_name" --replace=555 -t 2000
 fi
 bar=$(seq -s "─" $(($volume/5)) | sed 's/[0-9]//g')
 # Send the notification
-$DIR/notify-send.sh "$volume""     ""$bar" -i "$icon_name" -t 2000 -h int:value:"$volume" -h string:synchronous:"$bar" --replace=555
+$DIR/notify-send.sh "Volume $volume%" -i "$icon_name" -t 2000 -h int:value:"$volume" -h string:synchronous:"$bar" --replace=555
 
 }
 

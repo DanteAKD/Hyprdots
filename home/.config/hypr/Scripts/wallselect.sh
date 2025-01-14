@@ -1,5 +1,4 @@
-
-
+#!/usr/bin/env bash
 for app in imagemagick; do
   if ! pacman -Q $app >/dev/null 2>&1; then
     dunstify "Missing package" "Please install the $app package to continue" -u critical

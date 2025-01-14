@@ -198,7 +198,8 @@ services.pipewire = {
 	dunst
 	libnotify
 	swww
-	kitty
+	alacritty
+  kitty
 	rofi-wayland
 	cliphist
 	swaylock

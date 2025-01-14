@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
 # Send a notification if the laptop battery is either low, critical, fully charged, or just started charging/discharging.
 # Set on a systemd timer (~/.config/systemd/user/battery-alert.timer).
 

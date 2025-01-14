@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 while true; do
   read -n 1 -p "Would you like to upload a directory or a file? (d/f) " var_type
   echo " "
