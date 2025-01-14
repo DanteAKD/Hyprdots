@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-for app in imagemagick; do
-  if ! pacman -Q $app >/dev/null 2>&1; then
-    dunstify "Missing package" "Please install the $app package to continue" -u critical
-    exit 1
-  fi
-done
+#for app in imagemagick; do
+#  if ! pacman -Q $app >/dev/null 2>&1; then
+#    dunstify "Missing package" "Please install the $app package to continue" -u critical
+#    exit 1
+#  fi
+#done
 
 # Set some variables
 WALL_DIR="${HOME}/Pictures/Colourful/"
