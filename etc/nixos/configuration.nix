@@ -32,15 +32,14 @@
   #Tablet
   hardware.opentabletdriver.enable = true;
   # GPU
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [libglvnd libvdpau-va-gl];
 };
 environment.variables.VDPAU_DRIVER = "va_gl";
 environment.variables.LIBVA_DRIVER_NAME = "intel";
-  services.xserver.videoDrivers = ["intel"];
+  services.xserver.videoDrivers = ["modesetting"];
   hardware.nvidia = {
     modesetting.enable = false;
     powerManagement.enable = false;
@@ -68,7 +67,11 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
 };
 };
 };
-  programs.vim.defaultEditor = true;
+  
+programs.vim = {	
+	enable = true;
+	defaultEditor = true;
+};
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -78,8 +81,9 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.inputMethod = {
+    enable = true;
     fcitx5.waylandFrontend = true;
-    enabled = "fcitx5";
+    type = "fcitx5";
     fcitx5.addons = with pkgs; [ fcitx5-unikey ];
   };
   i18n.extraLocaleSettings = {
@@ -104,7 +108,7 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
   users.users.irisu = {
     isNormalUser = true;
     description = "irisu";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "adbusers" ];
     packages = with pkgs; [];
   };
 
@@ -112,7 +116,6 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
   nixpkgs.config.allowUnfree = true;
   #nixpkgs.config.allowUnsupportedSystem = true;
 #enable sound with pipewire
-sound.enable = true;
 security.rtkit.enable = true;
 services.pipewire = {
  enable = true;
@@ -123,7 +126,7 @@ services.pipewire = {
 };
   fonts.packages = with pkgs; [
 	noto-fonts
-	noto-fonts-cjk
+	noto-fonts-cjk-sans
 	noto-fonts-emoji
 	nerdfonts
 	fira-code
@@ -132,7 +135,7 @@ services.pipewire = {
         jetbrains-mono
 ];
   programs.nix-ld.enable = true;
-
+  programs.adb.enable = true;
   programs.nix-ld.libraries = with pkgs; [
 
     # Add any missing dynamic libraries for unpackaged programs
@@ -145,6 +148,7 @@ services.pipewire = {
 	libclang
 	clang-tools
 	libstdcxx5
+	python3
   ];
 
   # List packages installed in system profile. To search, run:
@@ -152,6 +156,8 @@ services.pipewire = {
   environment.systemPackages = with pkgs; [
     nur.repos.ataraxiasjel.waydroid-script 
     home-manager
+    scrcpy
+    glib
     vscode 
     vim
     wget
@@ -183,7 +189,7 @@ services.pipewire = {
     cbonsai
     usbutils
     cmatrix
-    gnome.eog
+    eog
     atool
     pavucontrol
     spicetify-cli
@@ -209,7 +215,7 @@ services.pipewire = {
 	wl-clipboard
 	wlroots
 krita	
-gnome.gnome-software
+gnome-software
   ];
 services.flatpak.enable = true;
 nixpkgs.config.qt5 = {
