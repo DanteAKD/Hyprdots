@@ -38,24 +38,28 @@
     extraPackages = with pkgs; [libglvnd libvdpau-va-gl];
 };
 environment.variables.VDPAU_DRIVER = "va_gl";
-environment.variables.LIBVA_DRIVER_NAME = "intel";
-  services.xserver.videoDrivers = ["modesetting"];
-  hardware.nvidia = {
-    modesetting.enable = false;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable; 
-};
- #drivers.nvidia.enable = true;
- #drivers.nvidia-prime = {
-    #enable = true;
-    #intelBusID = "00:02.0";
-   # nvidiaBusID = "01:00.0";
-  #};
- #drivers.intel.enable = true;
+environment.variables.LIBVA_DRIVER_NAME = "intel"; 
+     			services.xserver.videoDrivers = [ "modesetting" ]; 
+			hardware = {
+  
+     				nvidia = { 
+					open = false;
+					powerManagement.enable = false;
+					package = config.boot.kernelPackages.nvidiaPackages.stable; 
+  					powerManagement.finegrained = false;	
+     					modesetting.enable = true;# nvidia-drm.modeset=1 is required for some wayland compositors, e.g. sway 
+  
+     					prime = { 
+      				 		offload = {
+							enable = true;
+							enableOffloadCmd = true;
+						};
+						nvidiaBusId = "PCI:1:0:0";# Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA 
+      				 		intelBusId = "PCI:0:2:0"; 
+     					};
+  				};
+			};
+	 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -63,11 +67,11 @@ environment.variables.LIBVA_DRIVER_NAME = "intel";
 	packageOverrides = pkgs: {
 	unstable = import <unstable> {};
 	nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-};
-};
-};
-  
+      				inherit pkgs;
+			};
+		};
+	};
+powerManagement.powertop.enable = true; 
 programs.vim = {	
 	enable = true;
 	defaultEditor = true;
@@ -148,12 +152,14 @@ services.pipewire = {
 	libclang
 	clang-tools
 	libstdcxx5
-	python3
   ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    python3            # The Python interpreter
+    python3Packages.pip # Optional: Package installer
+    python3Packages.virtualenv
     nur.repos.ataraxiasjel.waydroid-script 
     home-manager
     scrcpy
@@ -170,6 +176,7 @@ services.pipewire = {
     brightnessctl
     firefox
     vesktop
+    qtscrcpy
     ani-cli
     mpv 
     cmus
@@ -287,6 +294,6 @@ environment.sessionVariables = {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }
